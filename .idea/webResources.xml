@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/1-flask/program" />
+            <path value="file://$PROJECT_DIR$/3-my-flask/program" />
+            <path value="file://$PROJECT_DIR$/3-my-flask/program/static/css" />
+            <path value="file://$PROJECT_DIR$/3-my-flask/program/static/js" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

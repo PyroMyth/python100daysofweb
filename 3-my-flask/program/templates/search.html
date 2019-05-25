@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block pageTitle %}
+- Games Search
+{% endblock %}
+
+{% block pageName %}search{% endblock %}
+
+{% block content %}
+Under construction
+
+    <form id="search-form" action="/searchgames" method="POST" class="pure-form pure-form-stacked">
+        <fieldset>
+            <div class="form-row pure-g">
+                <div class="pure-u-1">
+                    <label for="game-name" class="">Game Name: </label>
+                    <input type="text" id="game-name" name="game-name" class="pure-u-23-24" value="{{ form['game-name'] }}" />
+                </div>
+            </div>
+            <div class="form-row pure-g">
+                <div class="pure-u-1 pure-u-md-7-24">
+                    <label for="num-players" class="">Number of Players: </label>
+                    <input type="number" id="num-players" name="num-players" class="pure-u-23-24" value="{{ form['game-name'] }}" />
+                </div>
+                <div class="pure-u-1 pure-u-md-3-24">
+                    <label class="text-center">OR</label>
+                </div>
+                <div class="pure-u-1 pure-u-md-7-24">
+                    <label for="num-players-min" class="">Minimum Number of Players: </label>
+                    <input type="number" id="num-players-min" name="num-players-min" class="pure-u-23-24" value="{{ form['game-name'] }}" />
+                </div>
+                <div class="pure-u-1 pure-u-md-7-24">
+                    <label for="num-players-max" class="">Maximum Number of Players: </label>
+                    <input type="number" id="num-players-max" name="num-players-max" class="pure-u-23-24" value="{{ form['game-name'] }}" />
+                </div>
+            </div>
+            <div class="form-row pure-g">
+                <div class="pure-u-1">
+                    <legend>Type of Game: (Select one or more)</legend>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="type-card" class="pure-checkbox pure-u-23-24">
+                        <input type="checkbox" id="type-card" name="type-card" class=""> Card
+                    </label>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="type-board" class="pure-checkbox pure-u-23-24">
+                        <input type="checkbox" id="type-board" name="type-board" class=""> Board
+                    </label>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="type-dice" class="pure-checkbox pure-u-23-24">
+                        <input type="checkbox" id="type-dice" name="type-dice" class=""> Dice
+                    </label>
+                </div>
+            </div>
+            <div class="form-row pure-g">
+                <div class="pure-u-1">
+                    <legend>Game Characteristics: (Select one or more)</legend>
+                </div>
+                {% for tag in tags %}
+                    <div class="pure-u-1 pure-u-md-1-4">
+                        <label for="tag-{{ tag.name }}" class="pure-checkbox pure-u-23-24">
+                            <input type="checkbox" id="tag-{{ tag.name }}" name="tag-{{ tag.name }}" class="">{{ tag.label }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="pure-button pure-button-primary pure-u-1-2">Search!</button>
+            <button type="reset" class="pure-button pure-button-secondary pure-u-1-2">Reset form</button>
+        </fieldset>
+    </form>
+
+    <div class="search-results">
+        <div id="game-results">
+            <table class="list">
+                <thead>
+                    <th>Game Name</th>
+                    <th>Number of Players</th>
+                    <th>Type</th>
+                    <th>Characteristics</th>
+                </thead>
+                <tbody>
+                    {% for key in results %}
+                        <tr>
+                            <td class="game-name"><strong>{{ key }}</strong></td>
+                            <td class="num-players">{{ results[key] }}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block utilscripts %}
+    amgUtil.listify();
+{% endblock %}

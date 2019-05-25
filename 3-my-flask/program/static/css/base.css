@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div#main {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+}
+
+div#content {
+    margin-left: 220px;
+    padding-bottom: 3em;
+}
+
+div#footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    width: available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+    margin-left: 200px;
+    background: #333333;
+    color: #cccccc;
+    min-height: 3em;
+}
+
+div#footer {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Class Styling for All Tags */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
